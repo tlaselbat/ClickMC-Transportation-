@@ -1,0 +1,30 @@
+{
+  "required": true,
+  "package": "com.tabletmc.travel_system_revamp.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "server.AbstractHorseEntityMixin",
+    "server.AllowRaft",
+    "server.EntityMixin",
+    "server.HorseScreenHandlerMixin",
+    "server.MovementCheck",
+    "server.NoBuck",
+    "server.NoWander",
+    "server.PlayerEntityMixin",
+    "server.PlayerManagerMixin",
+    "server.ServerPlayerMixin",
+    "server.Swim"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "client.ClientPlayerMixin",
+    "client.HeadPitchOffset",
+    "client.HorseRenderer",
+    "client.JebHorseTintable",
+    "client.TransparentArmor",
+    "client.TransparentLlamaDecor",
+    "client.TransparentMarkings"
+  ]
+}

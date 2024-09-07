@@ -1,0 +1,24 @@
+
+
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "travel_system_revamp",
+
+  "pattern": [
+  "  #",
+  "###",
+  "# #"
+  ],
+  "key":
+      {
+        "#": {
+          "item": "minecraft:netherite_ingot"
+        }
+      },
+  "result": {
+    "count": 1  ,
+    "id": "travel_system_revamp:netherite_horse_armor"
+
+
+  }
+}
