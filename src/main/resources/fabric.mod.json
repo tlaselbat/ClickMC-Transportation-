@@ -1,38 +1,32 @@
 {
 	"schemaVersion": 1,
-	"id": "travelsystemrevamp",
-	"version": "${version}",
-	"accessWidener": "travelsystemrevamp.accesswidener",
-	"name": "Travel System Revamp",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"TabletMC"
-	],
+	"id": "transport-plus",
+	"icon": "assets/transport_plus/icon.png",
+	"version": "beta-1.0.0",
+	"accessWidener": "transport_plus.accesswidener",
+	"name": "ClickMC: Transport Plus",
+	"description": "A brief description of the mod.",
+	"authors": ["TabletMC"],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/TabletMC/Transport-Plus"
 	},
 	"license": "CC0-1.0",
 	"environment": "*",
 	"entrypoints": {
-		"modmenu": [ "com.tabletmc.travelsystemrevamp.config.ModMenuIntegration" ],
-		"client": [
-			"com.tabletmc.travelsystemrevamp.ClientModInitializer"
-		],
-		"main": [
-			"com.tabletmc.travelsystemrevamp.ModInitializer"
-		]
+		"modmenu": ["com.tabletmc.transport_plus.config.ModMenuIntegration"],
+		"client": ["com.tabletmc.transport_plus.ClientInitializer"],
+		"main": ["com.tabletmc.transport_plus.ModInitializer"]
 	},
-	"mixins": [
-		"travelsystemrevamp.mixins.json"
-	],
-	"depends": {
+	"mixins": ["transport_plus.mixins.json"],
+	"dependencies": {
 		"fabricloader": ">=0.15.11",
 		"minecraft": ">=1.21",
 		"java": ">=21",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"cloth-config": "*"
 	},
-	"suggests": {
-		"another-mod": "*"
+	"suggestedDependencies": {
+		"modmenu": "*"
 	}
 }

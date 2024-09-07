@@ -2,7 +2,7 @@
 
 {
   "type": "minecraft:crafting_shaped",
-  "group": "travel_system_revamp",
+  "group": "transport_plus",
 
   "pattern": [
   "  #",
@@ -17,7 +17,7 @@
       },
   "result": {
     "count": 1  ,
-    "id": "travel_system_revamp:netherite_horse_armor"
+    "id": "transport_plus:netherite_horse_armor"
 
 
   }
