@@ -7,10 +7,10 @@ plugins {
 }
 
 // Configure the Fabric Loom plugin
-loom {
-	// Specify the path to the access widener file
-	accessWidenerPath = file("src/main/resources/transport_plus.accesswidener")
-}
+//loom {
+//	// Specify the path to the access widener file
+//	accessWidenerPath = file("src/main/resources/transport_plus.accesswidener")
+//}
 
 // Configure the base settings for the mod
 base {
@@ -41,11 +41,11 @@ dependencies {
 	// Use the Fabric Loader dependency
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	// Use the Fabric API dependency
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+		modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	// Use the Cloth Config dependency
 	modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
 		// Exclude the Fabric API group to avoid conflicts
-		exclude(group: 'net.fabricmc.fabric-api')
+	exclude(group: 'net.fabricmc.fabric-api')
 	}
 	// Use the Mod Menu dependency
 	modImplementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
@@ -63,12 +63,6 @@ processResources {
 	}
 }
 
-// Configure the Java compilation tasks
-tasks.withType(JavaCompile).configureEach {
-	// Set the release version to 21
-	options.release = 21
-}
-
 // Configure the Java settings
 java {
 	// Generate a sources JAR
@@ -82,8 +76,7 @@ java {
 // Configure the JAR task
 jar {
 compileJava {
-	// Set the release version to 21
-	options.release = 21
+
 
 	// Add the mod's JAR to the JAR
 	from("build/libs/${project.archivesBaseName}-${project.version}.jar")

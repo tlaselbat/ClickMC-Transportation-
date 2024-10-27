@@ -1,9 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "transport-plus",
-	"icon": "assets/transport_plus/icon.png",
 	"version": "beta-1.0.0",
-	"accessWidener": "transport_plus.accesswidener",
 	"name": "ClickMC: Transport Plus",
 	"description": "A brief description of the mod.",
 	"authors": ["TabletMC"],
@@ -14,7 +12,6 @@
 	"license": "CC0-1.0",
 	"environment": "*",
 	"entrypoints": {
-		"modmenu": ["com.tabletmc.transport_plus.config.ModMenuIntegration"],
 		"client": ["com.tabletmc.transport_plus.ClientInitializer"],
 		"main": ["com.tabletmc.transport_plus.ModInitializer"]
 	},

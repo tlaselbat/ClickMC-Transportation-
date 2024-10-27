@@ -16,6 +16,9 @@ import static net.minecraft.item.ArmorMaterials.NETHERITE;
  */
 public class ModItems  {
 
+//TODO: add trinket item for horse storage
+
+
 	/**
 	 * The Netherite Horse Armor item.
 	 */

@@ -18,10 +18,18 @@ import static com.tabletmc.transport_plus.item.ModItems.NETHERITE_HORSE_ARMOR;
 
 @Mixin(value = AbstractHorseEntity.class)
 public abstract class AbstractHorseEntityMixin implements NetheriteArmorImpl {
+
+    // Flag to indicate if the horse has double jumped
     @Unique
     private boolean doubleJumped = false;
+
+    // The horse's jump strength
     @Shadow protected float jumpStrength;
+
+    // Flag to indicate if the horse is wearing Netherite Horse Armor
     @Unique private boolean mountArmor = false;
+
+    // Method to check if the horse is wearing Netherite Horse Armor
     public boolean hasNetheriteArmor() {
         return mountArmor;
     }
@@ -35,22 +43,21 @@ public abstract class AbstractHorseEntityMixin implements NetheriteArmorImpl {
         // Get the horse's current body armor
         Item currentArmor = ((AnimalEntity) (Object) this).getBodyArmor().getItem();
 
-
         // Check if the current armor is Netherite Horse Armor
         mountArmor = currentArmor.equals(NETHERITE_HORSE_ARMOR.asItem());
     }
 
+    // Method to write the Netherite armor flag to NBT
     @Inject(method="writeCustomDataToNbt", at = @At("HEAD"))
     public void writeCustomDataToNbt(NbtCompound nbt, CallbackInfo ci) {
         nbt.putBoolean("HorseArmor", mountArmor);
     }
 
+    // Method to read the Netherite armor flag from NBT
     @Inject(method="readCustomDataFromNbt", at = @At("HEAD"))
     public void readCustomDataFromNbt(NbtCompound nbt, CallbackInfo ci) {
         mountArmor = nbt.getBoolean("HorseArmor");
     }
-
-
 
     /**
      * This method is injected into the 'tickControlled' method of the AbstractHorseEntity class.
@@ -66,8 +73,9 @@ public abstract class AbstractHorseEntityMixin implements NetheriteArmorImpl {
         if (ahe.hasPlayerRider() && hasNetheriteArmor()) {
             // If the horse is on the ground and not in the air, reset the doubleJumped flag.
             // This is necessary to allow the horse to jump again after landing.
-            if (ahe.isOnGround()
-            ) doubleJumped = false;
+            if (ahe.isOnGround()) {
+                doubleJumped = false;
+            }
 
             // Check if the horse has not already double jumped, and if it has enough jump strength.
             // Also check if the horse is in the air and not on the ground.
@@ -91,6 +99,4 @@ public abstract class AbstractHorseEntityMixin implements NetheriteArmorImpl {
             }
         }
     }
-
-    }
-
+}
